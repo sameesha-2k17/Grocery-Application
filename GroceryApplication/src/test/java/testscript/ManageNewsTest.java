@@ -30,6 +30,8 @@ public void  verifyAddNews() throws IOException {
 		newsarea.sendKeys("samplearea");
 		WebElement savebutton=driver.findElement(By.xpath("//button [@name='create']"));
 		savebutton.click();	
+		WebElement closebutton=driver.findElement(By.xpath("//button[@class='close']"));
+		closebutton.click();
 	}
 	@Test
 	public void verifyHomefunctionality() throws IOException {
@@ -59,7 +61,7 @@ public void  verifyAddNews() throws IOException {
 		WebElement signin= driver.findElement(By.xpath("//button[text()='Sign In']"));
 		signin.click();
 		
-		//to click on search functionality
+		//to click on search button
 		WebElement managenews= driver.findElement(By.xpath("//a [@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']"));
 		managenews.click();
 		WebElement search=driver.findElement(By.xpath("//a[@href='javascript:void(0)']"));
@@ -80,7 +82,7 @@ public void  verifyAddNews() throws IOException {
 		WebElement signin= driver.findElement(By.xpath("//button[text()='Sign In']"));
 		signin.click();
 		
-		//to click on search functionality
+		//to click on reset button
 		WebElement managenews= driver.findElement(By.xpath("//a [@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']"));
 		managenews.click();
 		WebElement search=driver.findElement(By.xpath("//a[@href='javascript:void(0)']"));
