@@ -29,25 +29,10 @@ public class LoginPage {
     public void clickonSignin() {
     	pageutility.clickElement(signin);
     }
+    
     //Web element for assertion
     @FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]") WebElement loginAlert;
     public boolean isLoginalertDisplayed() {
     	return loginAlert.isDisplayed();		
-    }
-    @FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]") WebElement loginAlert2;
-    public boolean isLoginalertDisplayed2() {
-    	return loginAlert2.isDisplayed();		
-    }
-    @FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]") WebElement loginAlert3;
-    public boolean isLoginalertDisplayed3() {
-    	return loginAlert3.isDisplayed();		
-    }
-    @FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]") WebElement loginAlert4;
-    public boolean isLoginalertDisplayed4() {
-    	return loginAlert4.isDisplayed();		
-    }
-    @FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]") WebElement loginAlert5;
-    public boolean isLoginalertDisplayed5() {
-    	return loginAlert5.isDisplayed();		
     }
 }

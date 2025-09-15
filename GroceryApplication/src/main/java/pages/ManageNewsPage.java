@@ -5,49 +5,52 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utilities.PageUtility;
+
 public class ManageNewsPage {
 	public WebDriver driver;
+	PageUtility pageutility=new PageUtility();
 	public ManageNewsPage(WebDriver driver) {
 		this.driver=driver;
 	}
 	@FindBy(xpath = "//a [@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']") WebElement managenews;
 	public void clickmanageNewsPage() {
-		managenews.click();
+		pageutility.clickElement(managenews);
 	}
 	
 	@FindBy(xpath = "//a [@href='https://groceryapp.uniqassosiates.com/admin/news/add'") WebElement newbutton;
 	public void clickNewButton() {
-		newbutton.click();
+		pageutility.clickElement(newbutton);
 	}
 	
 	@FindBy(xpath = "//textarea [@id='news'") WebElement newsarea;
 	public void enterNewsinTextarea() {
-		newsarea.sendKeys("samplearea");
+		pageutility.sendDataToElement(newsarea,"sample news");
 	}
 	
 	@FindBy(xpath = "//a[text()='Home']") WebElement homebutton;
 	public void clickonHomeButton() {
-		homebutton.click();
+		pageutility.clickElement(homebutton);
 	}
 	
 	@FindBy(xpath = "//a[@href='javascript:void(0)']") WebElement search;
 	public void search() {
-		search.click();
+		pageutility.clickElement(search);
 	}
 	
 	@FindBy(xpath = "//input[@name='un']") WebElement searchnews;
 	public void searchnews() {
-		searchnews.sendKeys("sample news");
+		pageutility.sendDataToElement(searchnews, "sample news");
 	}
 	
 	@FindBy(xpath = "//button[@name='Search']") WebElement searchbutton;
 	public void searchbutton() {
-	searchbutton.click();
+	pageutility.clickElement(searchbutton);
 	}
 	
 	@FindBy(xpath = "//button[@name='Search']") WebElement resetbutton;
 	public void resetButton() {
-		resetbutton.click();
+		pageutility.clickElement(resetbutton);
 	}
 		
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']") WebElement addNewsAlert;
@@ -66,9 +69,7 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//form[@role='form' ]") WebElement searchandmangenewscard;
 	public boolean isSearchAndMangeNewsCarddisplayed() {
 			return searchandmangenewscard.isDisplayed();
-			  }
-		  
-		
+			  }	
 	}
 	
 	

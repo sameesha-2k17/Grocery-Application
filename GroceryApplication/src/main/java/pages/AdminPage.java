@@ -17,33 +17,32 @@ public class AdminPage {
 	
 @FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']") WebElement adminMoreinfo;
 public void clickAdminMoreInfor() {
-
-	//WebElement adminMoreinfo= driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']"));
-	adminMoreinfo.click();
+	pageutility.clickElement(adminMoreinfo);
 }
+
 @FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")WebElement newbutton;
 public void clickNewButton() {
-	//WebElement newbutton=driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-danger']"));
-	newbutton.click();
+	pageutility.clickElement(newbutton);
 }
+
 @FindBy(xpath = "//input[@id='username']")WebElement username_input;
 public void enterUserInput(String randomname) {
-	//WebElement username_input=driver.findElement(By.xpath("//input[@id='username']"));
-	username_input.sendKeys(randomname);
+	pageutility.sendDataToElement(username_input, randomname);
 }
+
 @FindBy(xpath = "//input[@id='password']")WebElement password_input;
 public void enterPasswordInput(String randompassword) {
-//WebElement password_input=driver.findElement(By.xpath("//input[@id='password']"));
-password_input.sendKeys(randompassword);
+pageutility.sendDataToElement(password_input, randompassword);
 }
+
 @FindBy(xpath = "//select[@name='user_type']")WebElement usertypedropdown;
 public void  usertypeDropdown(String userType) {
 	pageutility.selectDataWithVisibleText(usertypedropdown, userType);
 }
+
 @FindBy(xpath = "//button[@name='Create']")WebElement savebutton;
 public void clickSavebutton() {
-//WebElement savebutton=driver.findElement(By.xpath("//button[@name='Create']"));
-savebutton.click();
+	pageutility.clickElement(savebutton);
 }
 
 @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement addUSeralert;
