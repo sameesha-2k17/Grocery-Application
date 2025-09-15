@@ -1,5 +1,7 @@
 package testscript;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
@@ -7,24 +9,17 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constant.Constants;
+import constant.Messages;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends TestNGBase{
-	@Test
+	@Test(priority = 1, description = "Verify the navigation to home page and logout successfully")
 	public void verifyTest() throws IOException {
-		String usernameValue=ExcelUtility.getStringData(1, 0, "LoginPage");
-		String passwordValue=ExcelUtility.getStringData(1, 1, "LoginPage");
-//		WebElement username= driver.findElement(By.xpath("//input[@name='username']"));
-//		username.sendKeys(usernameValue);
-//		WebElement password= driver.findElement(By.xpath("//input[@name='password']"));
-//		password.sendKeys(passwordValue);
-//		WebElement signin= driver.findElement(By.xpath("//button[text()='Sign In']"));
-//		signin.click();
-		//WebElement adminicon=driver.findElement(By.xpath("//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']"));
-		//adminicon.click();
-		
+		String usernameValue=ExcelUtility.getStringData(1, 0,  Constants.LOGINSHEET);
+		String passwordValue=ExcelUtility.getStringData(1, 1,  Constants.LOGINSHEET);
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserName(usernameValue);
 		loginpage.enterPassword(passwordValue);
@@ -33,9 +28,9 @@ public class HomeTest extends TestNGBase{
 		homepage.clickAdminicon();
 		homepage.clickLogout();
 		
-		//WebElement logout=driver.findElement(By.xpath("//i[@class='ace-icon fa fa-power-off']"));
-		//logout.click();
+		String actual=driver.getCurrentUrl();
+		String expected="https://groceryapp.uniqassosiates.com/admin/login";
+		Assert.assertEquals(actual,expected,Messages.LOGOUTERROR);
+		
 	}
-	
-
 }

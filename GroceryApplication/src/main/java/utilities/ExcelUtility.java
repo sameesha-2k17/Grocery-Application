@@ -21,7 +21,7 @@ public class ExcelUtility {
 
 		{
 
-		f=new FileInputStream("C:\\Users\\acer\\eclipse-workspace\\GroceryApplication\\src\\test\\resources\\TestData.xlsx");
+		f=new FileInputStream("Constants.TESTDATAFILE");
 
 		w=new XSSFWorkbook(f);
 

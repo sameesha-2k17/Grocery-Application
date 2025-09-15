@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
 	public WebDriver driver;
@@ -10,12 +11,16 @@ public class HomePage {
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
 	}
+	@FindBy(xpath ="//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']")WebElement adminicon;
 	public void clickAdminicon() {
-		WebElement adminicon=driver.findElement(By.xpath("//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']"));
+		//WebElement adminicon=driver.findElement(By.xpath("//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']"));
 		adminicon.click();
 	}
+	@FindBy(xpath ="//i[@class='ace-icon fa fa-power-off']" )WebElement logout;
+		//WebElement logout=driver.findElement(By.xpath("//i[@class='ace-icon fa fa-power-off']"));
 	public void clickLogout() {
-		WebElement logout=driver.findElement(By.xpath("//i[@class='ace-icon fa fa-power-off']"));
 		logout.click();
+		
 	}
 }
+
