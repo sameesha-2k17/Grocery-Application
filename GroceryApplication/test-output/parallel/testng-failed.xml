@@ -7,17 +7,6 @@
   <test thread-count="5" parallel="methods" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testscript.ManageNewsTest">
-        <methods>
-          <include name="verifyAddNews"/>
-          <include name="driverQuit"/>
-          <include name="browserinitializer"/>
-          <include name="quitandclose"/>
-          <include name="verifySearchfunctionality"/>
-          <include name="verifyResetfunctionality"/>
-          <include name="verifyHomefunctionality"/>
-        </methods>
-      </class> <!-- testscript.ManageNewsTest -->
       <class name="testscript.LoginTest">
         <methods>
           <include name="driverQuit"/>
@@ -25,71 +14,26 @@
           <include name="validusernameinvalidpassword"/>
           <include name="quitandclose"/>
           <include name="verifyloginwithValidCredentials"/>
-          <include name="invalidusernameInvalidpassword3"/>
           <include name="inalidusernameValidpassword1"/>
-          <include name="invalidusernameInvalidpassword2"/>
+          <include name="invalidusernameInvalidpassword2" invocation-numbers="0"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
-      <class name="testscript.HomeTest">
-        <methods>
-          <include name="driverQuit"/>
-          <include name="browserinitializer"/>
-          <include name="verifyTest"/>
-          <include name="quitandclose"/>
-        </methods>
-      </class> <!-- testscript.HomeTest -->
-      <class name="testscript.AdminTest">
-        <methods>
-          <include name="driverQuit"/>
-          <include name="browserinitializer"/>
-          <include name="AddUser"/>
-          <include name="quitandclose"/>
-        </methods>
-      </class> <!-- testscript.AdminTest -->
     </classes>
   </test> <!-- Test(failed) -->
   <test thread-count="5" parallel="methods" name="FirefoxTest(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="testscript.ManageNewsTest">
-        <methods>
-          <include name="verifyAddNews"/>
-          <include name="driverQuit"/>
-          <include name="browserinitializer"/>
-          <include name="quitandclose"/>
-          <include name="verifySearchfunctionality"/>
-          <include name="verifyHomefunctionality"/>
-          <include name="verifyResetfunctionality"/>
-        </methods>
-      </class> <!-- testscript.ManageNewsTest -->
       <class name="testscript.LoginTest">
         <methods>
           <include name="driverQuit"/>
-          <include name="validusernameinvalidpassword"/>
           <include name="browserinitializer"/>
+          <include name="validusernameinvalidpassword"/>
           <include name="quitandclose"/>
           <include name="verifyloginwithValidCredentials"/>
-          <include name="invalidusernameInvalidpassword3"/>
           <include name="inalidusernameValidpassword1"/>
           <include name="invalidusernameInvalidpassword2"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
-      <class name="testscript.HomeTest">
-        <methods>
-          <include name="driverQuit"/>
-          <include name="browserinitializer"/>
-          <include name="verifyTest"/>
-          <include name="quitandclose"/>
-        </methods>
-      </class> <!-- testscript.HomeTest -->
-      <class name="testscript.AdminTest">
-        <methods>
-          <include name="driverQuit"/>
-          <include name="browserinitializer"/>
-          <include name="quitandclose"/>
-          <include name="AddUser"/>
-        </methods>
-      </class> <!-- testscript.AdminTest -->
     </classes>
   </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [parallel] -->

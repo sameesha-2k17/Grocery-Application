@@ -55,21 +55,20 @@ public class ManageNewsPage {
 		
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']") WebElement addNewsAlert;
 		  
-		public boolean isaddNewsAlertDisplayed() 
-		     {
-				
-				return addNewsAlert.isDisplayed();
-			  }
+	public boolean isaddNewsAlertDisplayed() 
+	{
+	return addNewsAlert.isDisplayed();
+	 }
 		  
 	 @FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody/tr[1]/td[1]") WebElement fistcelloftable;
 	public String isSearchedNewsListedIntable() {
 	 return fistcelloftable.getText();
-			  }
+	}
 	   
 	@FindBy(xpath = "//form[@role='form' ]") WebElement searchandmangenewscard;
 	public boolean isSearchAndMangeNewsCarddisplayed() {
-			return searchandmangenewscard.isDisplayed();
-			  }	
+	 return searchandmangenewscard.isDisplayed();
+		 }	
 	}
 	
 	

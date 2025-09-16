@@ -17,7 +17,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase{
-	@Test(priority = 1, description = "Login with valid credentials", retryAnalyzer = retry.Retry.class)
+	@Test(priority = 1, description = "Login with valid credentials", retryAnalyzer = retry.Retry.class , groups = {"smoke"})
 public void verifyloginwithValidCredentials() throws IOException {
 		String usernameValue=ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
 		String passwordValue=ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
@@ -55,7 +55,7 @@ public void verifyloginwithValidCredentials() throws IOException {
 		loginpage.enterUserName(usernameValue);
 		loginpage.enterPassword(passwordValue);
 		loginpage.clickonSignin();	
-		boolean isalertdisplayed = loginpage.isLoginalertDisplayed2();
+		boolean isalertdisplayed = loginpage.isLoginalertDisplayed();
 		Assert.assertTrue(isalertdisplayed,Messages.INVALIDUSERNAMEVALIDPASSWORDERROR);	
 	}
 	@Test(priority = 4, description = "Login with invalid username and invalid password",dataProvider = "loginProvider")
@@ -66,7 +66,7 @@ public void verifyloginwithValidCredentials() throws IOException {
 		loginpage.enterUserName(usernameValue);
 		loginpage.enterPassword(passwordValue);
 		loginpage.clickonSignin();
-		boolean isalertdisplayed = loginpage.isLoginalertDisplayed4();
+		boolean isalertdisplayed = loginpage.isLoginalertDisplayed();
 		Assert.assertTrue(isalertdisplayed,Messages.INVALIDUSERNAMEINVALIDPASSWORDERROR);
 	}
 	@DataProvider(name="loginProvider")
