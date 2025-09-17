@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class waitutility {
+public class WaitUtility {
 public static int EXPLICITWAIT=5;
 	
 	public void waitUntilClickable(WebDriver driver,WebElement element) {
@@ -18,5 +18,9 @@ public static int EXPLICITWAIT=5;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
 		wait.until(ExpectedConditions.elementToBeSelected(element));
 	}
-
+	public void waitUntilElemntIsInvisible(WebDriver driver,WebElement element)
+    {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.invisibilityOf(element));
+}
 }
