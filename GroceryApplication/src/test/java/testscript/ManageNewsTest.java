@@ -13,6 +13,8 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends TestNGBase{
 	HomePage homepage;
+	ManageNewsPage managenewspage;
+	
 	@Test(description = "Verify to click on manage news more info")
 public void verifyAddNews() throws IOException {
 		String usernameValue=ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
@@ -20,7 +22,6 @@ public void verifyAddNews() throws IOException {
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
 		homepage=loginpage.clickonSignin();
-		ManageNewsPage managenewspage=new ManageNewsPage(driver);
 		managenewspage=homepage.clickmanageNewsPage();
 		managenewspage.clickNewButton().enterNewsinTextarea().clickSaveNewsbtn();
 		//Assertion
@@ -34,7 +35,6 @@ public void verifyAddNews() throws IOException {
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
 		homepage=loginpage.clickonSignin();
-		ManageNewsPage managenewspage=new ManageNewsPage(driver);
 		managenewspage=homepage.clickmanageNewsPage();
 		homepage=managenewspage.clickonHomeButton();
 		 //Assertion
@@ -49,7 +49,6 @@ public void verifyAddNews() throws IOException {
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
 		homepage=loginpage.clickonSignin();
-		ManageNewsPage managenewspage=new ManageNewsPage(driver);
 		managenewspage=homepage.clickmanageNewsPage();	
 		managenewspage.search().searchnews().searchbutton();
 		//Assertion
@@ -64,7 +63,6 @@ public void verifyAddNews() throws IOException {
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserName(usernameValue).enterPassword(passwordValue);
 		homepage=loginpage.clickonSignin();;
-		ManageNewsPage managenewspage=new ManageNewsPage(driver);
 		managenewspage=homepage.clickmanageNewsPage();	
 		managenewspage.search().searchnews().resetButton();
 		
